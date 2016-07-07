@@ -16,6 +16,7 @@ var rosterSchema = new mongoose.Schema({
 	name: String,
 	age: Number,
 	hometown: String,
+	image: String,
 	position: String,
 	bats: String,
 	throws: String,
@@ -31,6 +32,7 @@ var Player = mongoose.model('Player', rosterSchema);
 // 	name: "Dan Smith",
 // 	age: 23,
 // 	hometown: "Brielle, NJ",
+// 	image: "http://grfx.cstv.com/schools/kty/blog/Strieby_action.jpg",
 // 	position: "1B",
 // 	bats: "Right",
 // 	throws: "Right",
@@ -52,6 +54,22 @@ app.get('/roster', function(req, res) {
 			console.log(err);
 		} else {
 			res.render('index', {players: players});
+		}
+	});
+});
+
+// NEW ROUTE
+app.get('/roster/new', function(req, res) {
+	res.render('new');
+});
+
+// CREATE ROUTE
+app.post('/roster', function(req, res) {
+	Player.create(req.body.player, function(err, newPlayer) {
+		if (err) {
+			res.render('new');
+		} else {
+			res.redirect('/roster');
 		}
 	});
 });

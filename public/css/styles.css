@@ -1,0 +1,18 @@
+body {
+	background: lightblue;
+}
+
+.thumbnail img {
+	margin: 5px 20px 5px 10px;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+.thumbnail h3 {
+	margin: 0;
+}
+
+.thumbnail p {
+	margin: 0;
+}

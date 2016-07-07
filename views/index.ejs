@@ -1,5 +1,26 @@
-<h1>Hello! This is the index page!</h1>
+<% include ./partials/header %>
+<div class="container">
+	<div class="page-header">
+		<h1>East City Hitters <small>Roster</small></h1>
+	</div>
+	<div class="row">
+		<% players.forEach(function(player) { %>
+			<div class="col-md-4">
+		    	<div class="thumbnail">
+		      		<img src="<%= player.image %>" alt="<%= player.name %>">
+		      		<div class="caption">
+		        		<h3><%= player.name %></h3>
+		        		<h5>Position: <%= player.position %></h5>
+		        		<h5>Age: <%= player.age %></h5>
+		        		<div class="clearfix"></div>
+		        		<div class="text-center">
+		        			<p><a href="#" class="btn btn-primary btn-block" role="button">More Info</a></p>
+		        		</div>
+		      		</div>
+		    	</div>
+		    </div>
+		<% }) %>
+	</div>
+</div>
 
-<% players.forEach(function(player) { %>
-	<li><%= player.name %></li>
-<% }) %>
+<% include ./partials/footer %>
