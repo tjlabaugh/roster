@@ -78,11 +78,33 @@ app.post('/roster', function(req, res) {
 app.get('/roster/:id', function(req, res) {
 	Player.findById(req.params.id, function(err, foundPlayer) {
 		if(err) {
-			console.log(err);
+			res.redirect('/roster');
 		} else {
 			res.render('playerInfo', {player: foundPlayer});
 		}
 	});
+});
+
+// EDIT ROUTE
+app.get('/roster/:id/edit', function(req, res) {
+	Player.findById(req.params.id, function(err, foundPlayer) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.render('edit', {player: foundPlayer});
+		}
+	});
+});
+
+// UPDATE ROUTE
+app.put('/roster/:id', function(req, res) {
+	Player.findByIdAndUpdate(req.params.id, req.body.player, function(err, updatePlayer) {
+		if(err) {
+			res.redirect('/roster');
+		} else {
+			res.redirect('/roster/' + req.params.id);
+		}
+	})
 });
 
 // LISTEN
