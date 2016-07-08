@@ -67,14 +67,23 @@ app.get('/roster/new', function(req, res) {
 app.post('/roster', function(req, res) {
 	Player.create(req.body.player, function(err, newPlayer) {
 		if (err) {
-			res.render('new');
+			res.render('/new');
 		} else {
 			res.redirect('/roster');
 		}
 	});
 });
 
-
+// SHOW ROUTE
+app.get('/roster/:id', function(req, res) {
+	Player.findById(req.params.id, function(err, foundPlayer) {
+		if(err) {
+			console.log(err);
+		} else {
+			res.render('playerInfo', {player: foundPlayer});
+		}
+	});
+});
 
 // LISTEN
 app.listen(3000, function() {

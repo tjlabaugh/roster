@@ -1,0 +1,42 @@
+<% include ./partials/header %>
+<div class="container">
+	<div class="page-header">
+		<h1>East City Hitters <small><%= player.name %></small></h1>
+	</div>
+	<div class="thumbnail">
+  		<img src="<%= player.image %>" alt="<%= player.name %>">
+  		<div class="caption">
+    		<h3><%= player.name %> <small><%= player.position %></small></h3>
+    		<div class="row">
+    			<div class="col-md-3">
+    				<h5>Age: <%= player.age %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Hometown: <%= player.hometown %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Throws: <%= player.throws %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Bats: <%= player.bats %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Homeruns: <%= player.hr %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Doubles: <%= player.doubles %></h5>
+    			</div>
+    			<div class="col-md-3">
+    				<h5>Triples: <%= player.triples %></h5>
+    			</div>
+    		</div>
+    		<div class="clearfix"></div>
+    		<div class="text-center">
+    			<a href="" class="btn btn-success">Edit Player</a>
+    			<a href="" class="btn btn-danger">Delete</a>
+    		</div>
+    	</div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

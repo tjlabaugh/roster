@@ -1,0 +1,58 @@
+<% include ./partials/header %>
+<div class="container">
+	<div class="page-header">
+		<h1>East City Hitters <small>New Player</small></h1>
+	</div>
+	<form action="/roster" method="POST">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="player[name]" placeholder="Player Name">
+		</div>
+		<div class="form-group">
+			<label for="age">Age</label>
+			<input type="text" class="form-control" id="age" name="player[age]" placeholder="Player Age">
+		</div>
+		<div class="form-group">
+			<label for="hometown">Hometown</label>
+			<input type="text" class="form-control" id="hometown" name="player[hometown]" placeholder="Player Hometown">
+		</div>
+		<div class="form-group">
+			<label for="image">Image</label>
+			<input type="text" class="form-control" id="image" name="player[image]" placeholder="Player Image">
+		</div>
+		<div class="form-group">
+			<label for="position">Position</label>
+			<input type="text" class="form-control" id="position" name="player[position]" placeholder="Player Position">
+		</div>
+		<div class="form-group">
+			<label for="bats">Bats</label>
+			<input type="text" class="form-control" id="bats" name="player[bats]" placeholder="Player Bats">
+		</div>
+		<div class="form-group">
+			<label for="throws">Throws</label>
+			<input type="text" class="form-control" id="throws" name="player[throws]" placeholder="Player Throws">
+		</div>
+		<div class="form-group">
+			<label for="avg">Batting Average</label>
+			<input type="text" class="form-control" id="avg" name="player[avg]" placeholder="Batting Average">
+		</div>
+		<div class="form-group">
+			<label for="hr">Home Runs</label>
+			<input type="text" class="form-control" id="hr" name="player[hr]" placeholder="Home Runs">
+		</div>
+		<div class="form-group">
+			<label for="doubles">Doubles</label>
+			<input type="text" class="form-control" id="doubles" name="player[doubles]" placeholder="Doubles">
+		</div>
+		<div class="form-group">
+			<label for="triples">Triples</label>
+			<input type="text" class="form-control" id="triples" name="player[triples]" placeholder="Triples">
+		</div>
+		<input type="submit" value="Submit Player" class="btn btn-primary">
+	</form>
+</div>
+
+
+
+
+<% include ./partials/footer %>

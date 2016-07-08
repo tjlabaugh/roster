@@ -1,5 +1,5 @@
 body {
-	background: lightblue;
+	background: #b1b1b1;
 }
 
 .thumbnail img {
@@ -15,4 +15,8 @@ body {
 
 .thumbnail p {
 	margin: 0;
+}
+
+h6 {
+	display: block;
 }
