@@ -107,6 +107,17 @@ app.put('/roster/:id', function(req, res) {
 	})
 });
 
+// DELETE ROUTE
+app.delete('/roster/:id', function(req, res) {
+	Player.findByIdAndRemove(req.params.id, function(err) {
+		if(err) {
+			console.log(err);
+		} else {
+			res.redirect('/roster');
+		}
+	});
+});
+
 // LISTEN
 app.listen(3000, function() {
 	console.log('Roster server has started.');

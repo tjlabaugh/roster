@@ -33,7 +33,9 @@
     		<div class="clearfix"></div>
     		<div class="text-center">
     			<a href="/roster/<%= player.id %>/edit" class="btn btn-success">Edit Player</a>
-    			<a href="" class="btn btn-danger">Delete</a>
+    			<form action="/roster/<%= player._id %>?_method=DELETE" method="POST">
+    				<input type="submit" class="btn btn-danger" value="Delete">
+    			</form>
     		</div>
     	</div>
     </div>
